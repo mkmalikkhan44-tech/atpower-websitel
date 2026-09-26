@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT POWER Home Cleaner Product</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body { background: #f4f9ff; color: #222; line-height: 1.7; }
+
+  /* हेडर */
+  header {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    color: #fff; padding: 15px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 100; flex-wrap: wrap;
+  }
+  header h1 { font-size: 20px; }
+  nav a {
+    color: #fff; text-decoration: none; margin-left: 15px;
+    font-size: 14px; font-weight: 500;
+  }
+  nav a:hover { text-decoration: underline; }
+
+  /* हीरो */
+  .hero {
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: #fff; text-align: center; padding: 60px 20px;
+  }
+  .hero h2 { font-size: 28px; margin-bottom: 15px; }
+  .hero p { font-size: 16px; margin-bottom: 25px; }
+  .btn {
+    background: #ffb703; color: #000;
+    padding: 12px 30px; border: none; border-radius: 30px;
+    font-size: 16px; font-weight: bold; cursor: pointer;
+    text-decoration: none; display: inline-block; margin: 5px;
+  }
+  .btn:hover { background: #ffa200; }
+  .btn-whatsapp { background: #25D366; color: #fff; }
+
+  section { padding: 40px 20px; }
+  section h3 {
+    text-align: center; font-size: 24px;
+    color: #0077b6; margin-bottom: 25px;
+  }
+
+  /* फीचर्स */
+  .features { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+  .feature {
+    background: #fff; padding: 20px; border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    width: 250px; text-align: center;
+  }
+  .feature .icon { font-size: 40px; margin-bottom: 10px; }
+
+  /* प्रोडक्ट्स */
+  .products { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .product {
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 250px; text-align: center;
+  }
+  .product .icon-box {
+    font-size: 90px; text-align: center;
+    padding: 30px; background: #d4f1f9;
+  }
+  .product .info { padding: 15px; }
+  .product h4 { color: #0077b6; margin-bottom: 8px; }
+  .product .price { font-size: 18px; font-weight: bold; color: #e63946; margin: 8px 0; }
+  .product .price small { color: #888; text-decoration: line-through; font-size: 14px; }
+
+  /* कार्ड */
+  .card {
+    background: #fff; border-radius: 12px; padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin: 15px auto; max-width: 800px;
+  }
+  .card h3 { color: #0077b6; margin-bottom: 12px; border-bottom: 2px solid #e8f4fb; padding-bottom: 8px; }
+  .card ul { padding-left: 20px; }
+  .card li { margin-bottom: 6px; }
+
+  /* कॉस्ट टेबल */
+  .cost-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .cost-table th, .cost-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  .cost-table th { background: #0077b6; color: #fff; }
+  .cost-table tr:nth-child(even) { background: #f4f9ff; }
+  .total-row { background: #ffb703 !important; font-weight: bold; }
+
+  /* रिव्यू */
+  .reviews { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+  .review {
+    background: #fff; padding: 20px; border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    width: 280px;
+  }
+  .review .stars { color: #ffb703; margin-bottom: 8px; }
+
+  /* सुरक्षा */
+  .safety-section { background: #fff8e1; }
+  .safety-section h3 { color: #d00000; }
+  .safety-card {
+    background: #fff; border-radius: 12px; padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin: 15px auto; max-width: 800px;
+  }
+  .safety-card h4 { color: #d00000; margin-bottom: 10px; }
+  .alert-box {
+    background: #fff3cd; border-left: 6px solid #ffb703;
+    padding: 20px; border-radius: 10px; margin: 15px auto;
+    max-width: 800px; text-align: center;
+    font-size: 18px; font-weight: bold; color: #856404;
+  }
+
+  /* संपर्क */
+  .contact { background: #0077b6; color: #fff; text-align: center; }
+  .contact h3 { color: #fff; }
+  .contact p { margin: 8px 0; font-size: 16px; }
+  .contact a { color: #ffb703; text-decoration: none; font-weight: bold; }
+
+  footer {
+    background: #023e58; color: #fff;
+    text-align: center; padding: 20px; font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    header { flex-direction: column; gap: 10px; }
+    nav a { margin: 0 8px; }
+    .hero h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- हेडर -->
+<header>
+  <h1>🧴 AT POWER</h1>
+  <nav>
+    <a href="#home">होम</a>
+    <a href="#products">प्रोडक्ट्स</a>
+    <a href="#about">हमारे बारे में</a>
+    <a href="#safety">सुरक्षा</a>
+    <a href="#contact">संपर्क</a>
+  </nav>
+</header>
+
+<!-- हीरो -->
+<section class="hero" id="home">
+  <h2>आपका अपना घर, अब और भी साफ-सुथरा!</h2>
+  <p>AT POWER Home Cleaner — सुरक्षित उपयोग • बेहतर सफाई • जिम्मेदार सेवा</p>
+  <a href="#products" class="btn">अभी ऑर्डर करें</a>
+</section>
+
+<!-- फीचर्स -->
+<section>
+  <h3>क्यों चुनें हमें?</h3>
+  <div class="features">
+    <div class="feature"><div class="icon">✨</div><h4>चमकदार सफाई</h4><p>हर कोने को चमकाता है</p></div>
+    <div class="feature"><div class="icon">🌿</div><h4>ताज़गी भरा</h4><p>घर में खुशबू फैलाए</p></div>
+    <div class="feature"><div class="icon">💰</div><h4>किफायती दाम</h4><p>सिर्फ ₹35 में</p></div>
+    <div class="feature"><div class="icon">🚚</div><h4>फास्ट डिलीवरी</h4><p>घर तक पहुँचे</p></div>
+  </div>
+</section>
+
+<!-- प्रोडक्ट्स -->
+<section id="products" style="background:#e8f4fb;">
+  <h3>हमारे प्रोडक्ट्स</h3>
+  <div class="products">
+
+    <div class="product">
+      <div class="icon-box">🧴</div>
+      <div class="info">
+        <h4>Floor Cleaner</h4>
+        <p>फर्श चमकदार और साफ</p>
+        <div class="price">₹35 <small>₹50</small></div>
+        <a href="#floor-detail" class="btn" style="padding:8px 20px;font-size:14px;">विवरण देखें</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="icon-box">🚽</div>
+      <div class="info">
+        <h4>Toilet Cleaner</h4>
+        <p>गंदगी और बदबू दूर</p>
+        <div class="price">₹— <small>जल्द आएगा</small></div>
+        <a href="#" class="btn" style="padding:8px 20px;font-size:14px;background:#ccc;">जल्द आएगा</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="icon-box">🧼</div>
+      <div class="info">
+        <h4>Handwash</h4>
+        <p>कोमल और सुरक्षित</p>
+        <div class="price">₹— <small>जल्द आएगा</small></div>
+        <a href="#" class="btn" style="padding:8px 20px;font-size:14px;background:#ccc;">जल्द आएगा</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="icon-box">🫧</div>
+      <div class="info">
+        <h4>Dishwash</h4>
+        <p>बर्तन चमकाए</p>
+        <div class="price">₹— <small>जल्द आएगा</small></div>
+        <a href="#" class="btn" style="padding:8px 20px;font-size:14px;background:#ccc;">जल्द आएगा</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- फ्लोर क्लीनर विवरण -->
+<section id="floor-detail">
+  <h3>Floor Cleaner — पूरी जानकारी</h3>
+
+  <div class="card">
+    <h3>✅ फायदे (Benefits)</h3>
+    <ul>
+      <li>फर्श को चमकदार और साफ बनाता है</li>
+      <li>घर को ताज़ा और सुगंधित बनाता है</li>
+      <li>गंदगी, तेल और दाग आसानी से हटाने में मदद करता है</li>
+      <li>हर तरह के फर्श (टाइल, मार्बल, ग्रेनाइट) पर उपयोग के लिए उपयुक्त</li>
+      <li>किफायती दाम — सिर्फ ₹35 प्रति बोतल</li>
+      <li>रोज़ाना सफाई के लिए बेहतरीन</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ नुकसान / सावधानियाँ</h3>
+    <ul>
+      <li>आँखों के संपर्क में आने पर जलन हो सकती है</li>
+      <li>त्वचा पर लगने पर एलर्जी हो सकती है</li>
+      <li>बच्चों और जानवरों के लिए हानिकारक</li>
+      <li>निगलने पर तुरंत डॉक्टर से मिलें</li>
+      <li>खुले घाव पर न लगाएँ</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🧴 कैसे इस्तेमाल करें</h3>
+    <ol style="padding-left:20px;">
+      <li>1 ढक्कन फ्लोर क्लीनर लें</li>
+      <li>उसे 1 लीटर साफ पानी में मिलाएँ</li>
+      <li>पोछे को उस घोल में भिगोएँ</li>
+      <li>फर्श पर अच्छी तरह पोछा लगाएँ</li>
+      <li>सूखने दें — फर्श चमक जाएगा ✨</li>
+    </ol>
+    <p style="margin-top:10px;"><strong>नोट:</strong> ज्यादा गंदगी हो तो घोल को थोड़ा गाढ़ा करें।</p>
+  </div>
+
+  <div class="card">
+    <h3>💰 उत्पाद लागत एवं बिक्री विश्लेषण</h3>
+    <table class="cost-table">
+      <tr><th>क्र.</th><th>आइटम</th><th>लागत (₹)</th></tr>
+      <tr><td>1</td><td>प्लास्टिक बोतल</td><td>6.00</td></tr>
+      <tr><td>2</td><td>ब्रांड लेबल</td><td>1.00</td></tr>
+      <tr><td>3</td><td>कच्चा माल (Raw Material)</td><td>8.00</td></tr>
+      <tr><td>4</td><td>पानी</td><td>0.20</td></tr>
+      <tr><td>5</td><td>सुगंध + रंग</td><td>1.00</td></tr>
+      <tr><td>6</td><td>ढक्कन</td><td>1.00</td></tr>
+      <tr><td>7</td><td>पैकेजिंग / अन्य खर्च</td><td>1.80</td></tr>
+      <tr class="total-row"><td colspan="2">कुल लागत प्रति बोतल</td><td>₹19.00</td></tr>
+      <tr class="total-row"><td colspan="2">बिक्री मूल्य</td><td>₹35.00</td></tr>
+      <tr class="total-row"><td colspan="2">मुनाफा प्रति बोतल</td><td>₹16.00</td></tr>
+    </table>
+    <p style="margin-top:10px;font-size:14px;color:#666;">
+      * यह लागत केवल Floor Cleaner के लिए है।
+    </p>
+  </div>
+
+  <div style="text-align:center; margin: 20px;">
+    <a href="https://wa.me/918078643250?text=मुझे%20Floor%20Cleaner%20चाहिए" class="btn btn-whatsapp">💬 WhatsApp पर ऑर्डर करें</a>
+  </div>
+</section>
+
+<!-- हमारे बारे में -->
+<section id="about" style="background:#e8f4fb;">
+  <h3>हमारे बारे में</h3>
+  <p style="text-align:center; max-width:700px; margin:0 auto;">
+    <strong>AT POWER Home Cleaner Product</strong> एक भरोसेमंद ब्रांड है जो घर की सफाई को आसान और सस्ता बनाता है।
+    हमारे सभी प्रोडक्ट्स उच्च गुणवत्ता वाले हैं और हर घर की जरूरत को ध्यान में रखकर बनाए गए हैं।
+  </p>
+  <p style="text-align:center; margin-top:15px;">
+    <strong>हेड ऑफिस:</strong> Alwar, Rajasthan — 301001
+  </p>
+</section>
+
+<!-- रिव्यू -->
+<section>
+  <h3>ग्राहकों की राय</h3>
+  <div class="reviews">
+    <div class="review"><div class="stars">⭐⭐⭐⭐⭐</div><p>"बहुत बढ़िया प्रोडक्ट, फर्श एकदम चमक गया!"</p><strong>— राहुल, दिल्ली</strong></div>
+    <div class="review"><div class="stars">⭐⭐⭐⭐⭐</div><p>"कीमत कम और असर ज्यादा। जरूर खरीदें।"</p><strong>— प्रिया, मुंबई</strong></div>
+    <div class="review"><div class="stars">⭐⭐⭐⭐</div><p>"डिलीवरी समय पर मिली, पैकेजिंग अच्छी थी।"</p><strong>— अमित, जयपुर</strong></div>
+  </div>
+</section>
+
+<!-- सुरक्षा सूचना -->
+<section id="safety" class="safety-section">
+  <h3>⚠️ महत्वपूर्ण सुरक्षा एवं सावधानी सूचना ⚠️</h3>
+
+  <div class="alert-box">⚠️ कृपया ध्यान से पढ़ें ⚠️</div>
+
+  <div class="safety-card">
+    <h4>👶 बच्चों की सुरक्षा</h4>
+    <ul>
+      <li>यह उत्पाद बच्चों की पहुँच से दूर रखें।</li>
+      <li>13 वर्ष से कम आयु के बच्चों को उत्पाद से दूर रखें।</li>
+      <li>बच्चों को इसका उपयोग स्वयं न करने दें।</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <h4>🐾 पालतू एवं अन्य जानवरों की सुरक्षा</h4>
+    <ul>
+      <li>उत्पाद को पालतू तथा अन्य जानवरों की पहुँच से दूर रखें।</li>
+      <li>उपयोग के दौरान जानवरों को उत्पाद से दूर रखें।</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <h4>🧤 उपयोग करते समय सावधानी</h4>
+    <ul>
+      <li>उत्पाद का उपयोग करते समय हाथों की सुरक्षा के लिए उपयुक्त दस्ताने पहनें।</li>
+      <li>उत्पाद को चेहरे, आँखों और त्वचा के सीधे संपर्क से बचाएँ।</li>
+      <li>छिड़काव करते समय चेहरे को उत्पाद से दूर रखें।</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <h4>🚫 सावधानी</h4>
+    <ul>
+      <li>उत्पाद को निगलें नहीं।</li>
+      <li>आँखों या चेहरे पर सीधे न लगाएँ।</li>
+      <li>उपयोग के बाद हाथ अच्छी तरह धो लें।</li>
+      <li>उत्पाद को उसके मूल कंटेनर में, ढक्कन अच्छी तरह बंद करके रखें।</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <h4>📦 भंडारण</h4>
+    <ul>
+      <li>ठंडी और सूखी जगह पर रखें।</li>
+      <li>भोजन, पेय पदार्थ, दवाइयों तथा बच्चों और जानवरों की पहुँच से दूर रखें।</li>
+    </ul>
+  </div>
+
+  <div class="safety-card" style="background:#ffe5e5;">
+    <h4>❤️ आपकी सुरक्षा हमारे लिए महत्वपूर्ण है</h4>
+    <p>यदि इस उत्पाद के उपयोग से आपको कोई समस्या, असुविधा या शिकायत होती है, तो कृपया हमसे संपर्क करें। हम आपकी समस्या को समझने और उचित समाधान देने का पूरा प्रयास करेंगे।</p>
+  </div>
+</section>
+
+<!-- संपर्क -->
+<section class="contact" id="contact">
+  <h3>संपर्क करें</h3>
+  <p>📞 फोन: <a href="tel:+918078643250">+91 80786 43250</a></p>
+  <p>💬 WhatsApp: <a href="https://wa.me/918078643250">+91 80786 43250</a></p>
+  <p>📧 ईमेल: <a href="mailto:mkmalikkhan44@gmail.com">mkmalikkhan44@gmail.com</a></p>
+  <p>📍 हेड ऑफिस: Alwar, Rajasthan — 301001</p>
+</section>
+
+<!-- फुटर -->
+<footer>
+  © 2025 AT POWER Home Cleaner Product | सर्वाधिकार सुरक्षित<br>
+  🧹 होम क्लीनर | 🧽 फ्लोर क्लीनर | 🚽 टॉयलेट क्लीनर | 🧴 हैंडवॉश | 🫧 डिशवॉश
+</footer>
+
+</body>
+</html>
